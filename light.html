@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>System and User Traffic Lights with Prominent Titles</title>
+  <style>
+    /* Outer container for both traffic light boxes */
+    .traffic-light-container {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: center;
+    }
+
+    /* Individual traffic light box */
+    .traffic-light-box {
+      width: 300px; /* Ensure consistent width */
+      padding: 5px 15px;
+      background-color: #d0d0d0; /* Slightly darker gray for elegance */
+      border-radius: 18px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Subtle shadow */
+      border: 1px solid #ccc;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    /* Centered box styling */
+    .centered {
+      justify-content: center; /* Center content within the box */
+    }
+
+    /* Luxurious label for each light section */
+    .light-label {
+      font-size: 14px;
+      font-weight: 500;
+      color: #444;
+      font-family: 'Courier New', monospace;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #333;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Subtle shadow for a luxury effect */
+    }
+
+    .light-label-dimension {
+      font-size: 18px;
+      font-weight: 900;
+      color: #444;
+      font-family: 'Courier New', monospace;
+      letter-spacing: 7px;
+      text-transform: uppercase;
+      color: #333;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Subtle shadow for a luxury effect */
+    }
+
+    /* Traffic light container for lights */
+    .traffic-light {
+      display: flex;
+      gap: 5px; /* Reduced gap between lights */
+    }
+
+    /* Light styles */
+    .light {
+      width: 22px;
+      height: 22px;
+      background-color: #aaa; /* Default (off) color */
+      border-radius: 50%;
+      box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3); /* Inner shadow for depth */
+      transition: background-color 0.3s, box-shadow 0.3s;
+    }
+
+    /* Active light colors with gradient */
+    .red {
+      background: radial-gradient(circle, #ff4d4d, #b71c1c);
+      box-shadow: 0 0 6px rgba(255, 0, 0, 0.5); /* Subtle glow effect */
+    }
+
+    .amber {
+      background: radial-gradient(circle, #ffd740, #ff8f00);
+      box-shadow: 0 0 6px rgba(255, 193, 7, 0.5);
+    }
+
+    .green {
+      background: radial-gradient(circle, #4caf50, #2e7d32);
+      box-shadow: 0 0 6px rgba(76, 175, 80, 0.5);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Traffic light container -->
+  <div class="traffic-light-container">
+
+    <!-- Centered box for Accuracy -->
+    <div class="traffic-light-box centered">
+      <span class="light-label-dimension">Label</span>
+    </div>
+
+    <!-- System Light Box with Amber Light On -->
+    <div class="traffic-light-box">
+      <span class="light-label">System Lights</span>
+      <div class="traffic-light">
+        <div class="light red"></div> <!-- Red light on -->
+        <div class="light amber"></div> <!-- Amber light on -->
+        <div class="light"></div> <!-- Green light off -->
+      </div>
+    </div>
+
+    <!-- User Light Box with Green Light On -->
+    <div class="traffic-light-box">
+      <span class="light-label">User Lights</span>
+      <div class="traffic-light">
+        <div class="light"></div> <!-- Red light off -->
+        <div class="light"></div> <!-- Amber light off -->
+        <div class="light green"></div> <!-- Green light on -->
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
