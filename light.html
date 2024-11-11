@@ -95,30 +95,48 @@
 
     <!-- Centered box for Accuracy -->
     <div class="traffic-light-box centered">
-      <span class="light-label-dimension">Label</span>
+      <span class="light-label-dimension">ACCURACY</span>
     </div>
 
-    <!-- System Light Box with Amber Light On -->
+    <!-- System Light Box -->
     <div class="traffic-light-box">
       <span class="light-label">System Lights</span>
       <div class="traffic-light">
-        <div class="light red"></div> <!-- Red light on -->
-        <div class="light amber"></div> <!-- Amber light on -->
-        <div class="light"></div> <!-- Green light off -->
+        <div id="system-red-light" class="light"></div>
+        <div id="system-amber-light" class="light"></div>
+        <div id="system-green-light" class="light"></div>
       </div>
     </div>
 
-    <!-- User Light Box with Green Light On -->
+    <!-- User Light Box -->
     <div class="traffic-light-box">
-      <span class="light-label">User Lights</span>
+      <span class="light-label">Owner Lights</span>
       <div class="traffic-light">
-        <div class="light"></div> <!-- Red light off -->
-        <div class="light"></div> <!-- Amber light off -->
-        <div class="light green"></div> <!-- Green light on -->
+        <div id="user-red-light" class="light"></div>
+        <div id="user-amber-light" class="light"></div>
+        <div id="user-green-light" class="light"></div>
       </div>
     </div>
 
   </div>
+
+  <!-- JavaScript to control the lights -->
+  <script>
+    // Function to activate a specific light and turn others off
+    function setLight(section, color) {
+      document.getElementById(`${section}-red-light`).classList.toggle("red", color === "red");
+      document.getElementById(`${section}-amber-light`).classList.toggle("amber", color === "amber");
+      document.getElementById(`${section}-green-light`).classList.toggle("green", color === "green");
+    }
+
+    // Example: Switch lights for each section after intervals
+    setInterval(() => setLight("system", "red"), 3000);
+    setInterval(() => setLight("system", "amber"), 6000);
+    setInterval(() => setLight("system", "green"), 9000);
+    setInterval(() => setLight("user", "red"), 4500);
+    setInterval(() => setLight("user", "amber"), 7500);
+    setInterval(() => setLight("user", "green"), 10500);
+  </script>
 
 </body>
 </html>
